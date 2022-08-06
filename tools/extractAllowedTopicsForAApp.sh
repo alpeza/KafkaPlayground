@@ -12,7 +12,7 @@ extractACLsMatrix(){
     regexUser=".*User:u(\w+)1,.*operation=(\w+)"
     while IFS= read -r line
     do
-        # TOKEN1: Procesamos la línea: 
+        # LINEA TIPO 1: Procesamos la línea: 
         # Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=testTopic, patternType=LITERAL)`: 
         if [[ "$line" =~ $regexResource ]]; then
             resourceType="${BASH_REMATCH[1]}"
@@ -20,7 +20,7 @@ extractACLsMatrix(){
             patternType="${BASH_REMATCH[3]}"
             resourceRegister="$resourceType,$name,$patternType"
         fi
-        # TOKEN2: Procesamos la línea: 
+        # LINEA TIPO 2: Procesamos la línea: 
         # (principal=User:urojo1, host=*, operation=READ, permissionType=ALLOW)
         if [[ "$line" =~ $regexUser ]]; then
             app="${BASH_REMATCH[1]}"
