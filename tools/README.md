@@ -1,0 +1,1 @@
+Carpeta compartida con kafka-tool para hacer uso de scripts conslas herramientas de kafka en `/home`
