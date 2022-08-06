@@ -59,6 +59,5 @@ extractTopics
 #3.- Hacemos un join entre los topics actuales desplegados y las acls 
 #    de una determinada aplicacion
 getAllowedTopicsForApp "$paramApp"
-
 # Borramos ficheros temporales
 rm -f "$list_output_file" "$acls_output_matrix_file" "$topics_output_list_file" "$acls_output_list_file"
