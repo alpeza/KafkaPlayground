@@ -52,9 +52,9 @@ getAllowedTopicsForApp(){
 
 
 paramApp=$1
-#1.- Extraemos las ACLs actules
+#1.- Extraemos las ACLs actules en un fichero csv
 extractACLsMatrix
-#2.- Extraemos los topics actuales
+#2.- Extraemos los topics actuales en un txt
 extractTopics
 #3.- Hacemos un join entre los topics actuales desplegados y las acls 
 #    de una determinada aplicacion
