@@ -1,0 +1,17 @@
+# Herramienta web para gestionar bases de datos
+version: '3.6'
+services:
+  dbvision:
+    image: dbeaver/cloudbeaver:22.3.5
+    environment:
+      CLOUDBEAVER_HTTP_PORT: '8978' # Puerto deseado
+      CLOUDBEAVER_CONFIG_SERVER_USERNAME: root
+      CLOUDBEAVER_CONFIG_SERVER_PASSWORD: root
+    ports:
+      - '8978:8978'
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true

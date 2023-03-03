@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    environment:
+      ORACLE_ALLOW_REMOTE: true
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+    ports:
+      - 1521:1521
+      - 5500:5500
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true
