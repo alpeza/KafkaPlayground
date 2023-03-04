@@ -8,7 +8,7 @@ Disponer de una máquina Linux con docker-compose. Podemos seguir el siguiente [
   
 ### Instalar
 
-Añadimos al bashrc de `Linux` las siguientes sentencias y realizamos un `source $HOME/.bashrc`:
+* Añadimos al bashrc de `Linux` las siguientes sentencias y realizamos un `source $HOME/.bashrc`:
 
 ```bash
 export DEVENV_PATH="/path/donde/hacia/este/repo" #TODO
@@ -16,6 +16,7 @@ export PATH="$DEVENV_PATH:$PATH"
 alias devenv="$DEVENV_PATH/tool/tool.sh"
 ```
 
+* Para acceder a `Kafka` desde la maquina `host`, por ejemplo si se esta desarrollando algun cliente en Java, es necesario añadir la siguiente sentencia `127.0.0.1       kafka`  a `/etc/hosts` 
 
 ## Comandos
 
