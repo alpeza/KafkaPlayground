@@ -4,9 +4,12 @@ services:
   dbvision:
     image: dbeaver/cloudbeaver:22.3.5
     environment:
-      CLOUDBEAVER_HTTP_PORT: '8978' # Puerto deseado
-      CLOUDBEAVER_CONFIG_SERVER_USERNAME: root
-      CLOUDBEAVER_CONFIG_SERVER_PASSWORD: root
+      CB_SERVER_NAME: dbvision
+      CB_ADMIN_NAME: adminroot
+      CB_ADMIN_PASSWORD: adminroot
+      CB_SERVER_URL: http://localhost:8978
+    volumes:
+      - ./datasources:/opt/cloudbeaver/workspace/GlobalConfiguration/.dbeaver
     ports:
       - '8978:8978'
     networks:
