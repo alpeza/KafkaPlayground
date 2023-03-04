@@ -1,0 +1,1 @@
+export MINIENV_COMPONENTS_PATH="$DEVENV_PATH/components"

@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    environment:
+      ORACLE_ALLOW_REMOTE: 'true'
+      ORACLE_ENABLE_XDB: 'true'
+      ORACLE_DISABLE_ASYNCH_IO: 'true'
+      #ORACLE_USER: 'system'
+      #ORACLE_PASSWORD: 'oracle'
+    ports:
+      - 1521:1521
+      - 8100:8080
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true

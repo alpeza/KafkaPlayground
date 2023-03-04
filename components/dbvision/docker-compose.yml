@@ -1,0 +1,20 @@
+# Herramienta web para gestionar bases de datos
+version: '3.6'
+services:
+  dbvision:
+    image: dbeaver/cloudbeaver:22.3.5
+    environment:
+      CB_SERVER_NAME: dbvision
+      CB_ADMIN_NAME: adminroot
+      CB_ADMIN_PASSWORD: adminroot
+      CB_SERVER_URL: http://localhost:8978
+    volumes:
+      - ./datasources:/opt/cloudbeaver/workspace/GlobalConfiguration/.dbeaver
+    ports:
+      - '8978:8978'
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true

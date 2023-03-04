@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  # ****** KTERMINAL ******
+  terminal:
+    image: kterminal:latest # Necesita construirse `docker build . -t kterminal:latest`
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    volumes:
+      - ./scripts:/home
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true
