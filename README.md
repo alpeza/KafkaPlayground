@@ -3,7 +3,8 @@
 ## Instalación
 
 ### Requisitos
-    - Disponer de una máquina Linux con docker-compose. Podemos seguir el siguiente [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+
+Disponer de una máquina Linux con docker-compose. Podemos seguir el siguiente [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
   
 ### Instalar
 
@@ -25,3 +26,15 @@ alias devenv="$DEVENV_PATH/tool/tool.sh"
 * `devend logs <componente>`: Muestra los logs del contenedor definido en <core> empleando `docker logs -f <core>`
 * `devend exec <componente>`: Accede al contenedor core mediante `docker exec -it`
 
+
+## Componentes
+
+Los _componentes_ son manifiestos de configuración _docker-compose_ con la configuración de cada contenedor. 
+
+- [core](components/core): Se trata de un Kafka, un Zookeeper y un Akhq
+- [connect](components/connect): Se trata de un Confluent Kafka Connect
+- [dbvision](components/dbvision/README.md): Se trata del gestor de base de datos web [CloudBeaver](https://dbeaver.com/docs/cloudbeaver/)
+- [mq](components/mq): Se trata de un servidor de MQSeries
+- [oracle](components/oracle): Se trata de un servidor de base de datos Oracle XE
+- [schema](components/schema): Se trata de un Confluent Schema Registry
+- [terminal](components/terminal/README.md): Se trata de un contenedor con las herramientas de Kafka instaladas pensado para ser empleado como terminal
