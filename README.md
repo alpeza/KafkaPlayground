@@ -29,6 +29,8 @@ alias devenv="$DEVENV_PATH/tool/tool.sh"
 
 ## Componentes
 
+Los _componentes_ son manifiestos de configuración _docker-compose_ con la configuración de cada contenedor. 
+
 - [core](components/core): Se trata de un Kafka, un Zookeeper y un Akhq
 - [connect](components/connect): Se trata de un Confluent Kafka Connect
 - [dbvision](components/dbvision/README.md): Se trata del gestor de base de datos web [CloudBeaver](https://dbeaver.com/docs/cloudbeaver/)
