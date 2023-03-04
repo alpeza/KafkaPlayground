@@ -1,4 +1,4 @@
-source .env
+source $DEVENV_PATH/tool/config.sh
 # Función para mostrar el mensaje de ayuda
 show_help() {
   echo "Uso: minienv <command> [<args>]"

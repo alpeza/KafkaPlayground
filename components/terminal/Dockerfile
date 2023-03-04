@@ -3,7 +3,7 @@ FROM openjdk:8
 LABEL maintainer="minikafka"
 
 ENV DEBIAN_FRONTEND interactive
-ENV KAFKA_VERSION="3.2.1"
+ENV KAFKA_VERSION="3.4.0"
 ENV SCALA_VERSION="2.13"
 
 RUN apt-get update 
@@ -21,7 +21,7 @@ RUN ( pip install pip --upgrade && \
       pip install --upgrade setuptools && \
       pip install kafka-tools )
 
-RUN ( wget -q "https://downloads.apache.org/kafka/3.2.1/kafka_2.13-3.2.1.tgz" -O /tmp/kafka.tgz && \
+RUN ( wget -q "https://downloads.apache.org/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz" -O /tmp/kafka.tgz && \
       tar xfz /tmp/kafka.tgz -C /opt && \
       mv /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka && \
       cd /opt/kafka/bin/ && \
