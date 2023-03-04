@@ -33,8 +33,8 @@ Los _componentes_ son manifiestos de configuración _docker-compose_ con la conf
 
 - [core](components/core): Se trata de un Kafka, un Zookeeper y un Akhq
 - [connect](components/connect): Se trata de un Confluent Kafka Connect
-- [dbvision](components/dbvision/README.md): Se trata del gestor de base de datos web [CloudBeaver](https://dbeaver.com/docs/cloudbeaver/)
+- [dbvision](components/dbvision): Se trata del gestor de base de datos web [CloudBeaver](https://dbeaver.com/docs/cloudbeaver/)
 - [mq](components/mq): Se trata de un servidor de MQSeries
 - [oracle](components/oracle): Se trata de un servidor de base de datos Oracle XE
 - [schema](components/schema): Se trata de un Confluent Schema Registry
-- [terminal](components/terminal/README.md): Se trata de un contenedor con las herramientas de Kafka instaladas pensado para ser empleado como terminal
+- [terminal](components/terminal): Se trata de un contenedor con las herramientas de Kafka instaladas pensado para ser empleado como terminal
