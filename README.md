@@ -3,7 +3,8 @@
 ## Instalación
 
 ### Requisitos
-    - Disponer de una máquina Linux con docker-compose. Podemos seguir el siguiente [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+
+Disponer de una máquina Linux con docker-compose. Podemos seguir el siguiente [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
   
 ### Instalar
 
