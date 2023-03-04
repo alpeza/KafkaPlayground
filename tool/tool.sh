@@ -56,7 +56,7 @@ case "$1" in
       echo "Se requiere el nombre del core"
       exit 1
     fi
-    docker-compose -f "$MINIENV_COMPONENTS_PATH/$2/docker-compose.yml" stop
+    docker-compose -f "$MINIENV_COMPONENTS_PATH/$2/docker-compose.yml" down
     ;;
   logs)
     if [[ $# -lt 2 ]]; then

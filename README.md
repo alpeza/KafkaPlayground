@@ -16,7 +16,13 @@ export PATH="$DEVENV_PATH:$PATH"
 alias devenv="$DEVENV_PATH/tool/tool.sh"
 ```
 
-* Para acceder a `Kafka` desde la maquina `host`, por ejemplo si se esta desarrollando algun cliente en Java, es necesario añadir la siguiente sentencia `127.0.0.1       kafka`  a `/etc/hosts` 
+* Para acceder a `Kafka` desde la maquina `host`, por ejemplo si se esta desarrollando algun cliente en Java, es necesario añadir la siguiente sentencias a `/etc/hosts`.
+
+```
+127.0.0.1       kafka
+127.0.0.1       connect
+127.0.0.1       schema-registry
+```
 
 ## Comandos
 
