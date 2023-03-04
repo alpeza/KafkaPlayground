@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-186abe99d2e-60182b84ce42fbb4": {
+		"oracle_thin-186acd79b5e-48fbff003f3bcc6a": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "OracleLocal",
@@ -13,9 +13,25 @@
 				"url": "jdbc:oracle:thin:@oracle:1521:XE",
 				"configurationType": "MANUAL",
 				"type": "dev",
-				"properties": {
-					"oracle.jdbc.timezoneAsRegion": "false"
+				"provider-properties": {
+					"@dbeaver-sid-service@": "SID",
+					"oracle.logon-as": "Normal"
 				},
+				"auth-model": "oracle_native"
+			}
+		},
+		"oracle_thin-186acde3090-2109f25ce88c596f": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "MISTESTS",
+			"template": true,
+			"configuration": {
+				"host": "oracle",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@oracle:1521:XE",
+				"configurationType": "MANUAL",
+				"type": "dev",
 				"provider-properties": {
 					"@dbeaver-sid-service@": "SID",
 					"oracle.logon-as": "Normal"

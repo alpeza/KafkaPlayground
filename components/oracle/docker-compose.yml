@@ -1,16 +1,19 @@
 version: '3.6'
 services:
   oracle:
-    image: oracleinanutshell/oracle-xe-11g:latest
+    image: gvenzl/oracle-xe:21-slim
     environment:
       ORACLE_ALLOW_REMOTE: 'true'
       ORACLE_ENABLE_XDB: 'true'
       ORACLE_DISABLE_ASYNCH_IO: 'true'
-      #ORACLE_USER: 'system'
-      #ORACLE_PASSWORD: 'oracle'
+      APP_USER: mitestuser
+      APP_USER_PASSWORD: mitestuser
+      ORACLE_USER: 'system'
+      ORACLE_PASSWORD: 'oracle'
+      #ORACLE_RANDOM_PASSWORD: 'yes'
     ports:
       - 1521:1521
-      - 8100:8080
+      - 5500:5500
     networks:
       - core_fast-net
 

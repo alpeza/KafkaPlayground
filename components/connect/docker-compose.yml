@@ -23,7 +23,11 @@ services:
       CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: '1'
       CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: '1'
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: '1'
-      CONNECT_PLUGIN_PATH: ' /usr/share/java/'
+      CONNECT_PLUGIN_PATH: '/usr/share/java/,/home/appuser'
+    ports:
+      - 8083:8083
+    volumes:
+      - ./plugins:/home/appuser
     networks:
       - core_fast-net
 networks:

@@ -1,0 +1,46 @@
+{
+	"folders": {},
+	"connections": {
+		"postgresql-template-1": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "PostgreSQL (Template)",
+			"save-password": false,
+			"show-system-objects": false,
+			"read-only": true,
+			"template": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "postgres",
+				"url": "jdbc:postgresql://localhost:5432/postgres",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false"
+				}
+			}
+		}
+	},
+	"oracle_thin-186abe99d2e-60182b84ce42fbb4": {
+		"provider": "oracle",
+		"driver": "oracle_thin",
+		"name": "OracleLocal",
+		"save-password": true,
+		"configuration": {
+			"host": "oracle",
+			"port": "1521",
+			"database": "XE",
+			"url": "jdbc:oracle:thin:@oracle:1521:XE",
+			"configurationType": "MANUAL",
+			"type": "dev",
+			"properties": {
+				"oracle.jdbc.timezoneAsRegion": "false"
+			},
+			"provider-properties": {
+				"@dbeaver-sid-service@": "SID",
+				"oracle.logon-as": "Normal"
+			},
+			"auth-model": "oracle_native"
+		}
+	}
+}
