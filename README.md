@@ -1,5 +1,7 @@
 # Kafka Playground
 
+Entorno para trabajar con distintos elementos de [Confluent Kafka](https://www.confluent.io/lp/confluent-kafka/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.brand_tp.prs_tgt.confluent-brand_mt.xct_rgn.emea_lng.eng_dv.all_con.confluent-kafka-general&utm_term=kafka%20confluent&creative=&device=c&placement=&gclid=CjwKCAiAmJGgBhAZEiwA1JZolqiNc7Xtig0Ye3pWk1OJNVhh44hptJ90gPCl0U0lDU_Ml5oXkfLrqRoC2dMQAvD_BwE).
+
 ## Instalación
 
 ### Requisitos
