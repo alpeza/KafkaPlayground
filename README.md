@@ -47,3 +47,4 @@ Los _componentes_ son manifiestos de configuración _docker-compose_ con la conf
 - [oracle](components/oracle): Se trata de un servidor de base de datos Oracle XE
 - [schema](components/schema): Se trata de un Confluent Schema Registry
 - [terminal](components/terminal): Se trata de un contenedor con las herramientas de Kafka instaladas pensado para ser empleado como terminal
+- [testApi](components/testapi): Se trata de un proyecto SpringBoot que permite realizar algunas acciones sobre la plataforma
