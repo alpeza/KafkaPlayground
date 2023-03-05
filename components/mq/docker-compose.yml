@@ -1,9 +1,9 @@
-version: '3.6'
-
+version: '3.8'
 services:
   # ****** MQSERIES ******
   mqseries:
-    image: ibmcom/mq:latest
+    #image: ibmcom/mq:9.1.5.0-r2
+    image: ibmcom/mq:9.2.4.0-r1
     ports:
       - "1414:1414"
       - "9443:9443"
@@ -11,7 +11,13 @@ services:
     environment:
       - LICENSE=accept
       - MQ_QMGR_NAME=QM1
-    container_name: mqserver
+      - MQ_APP_PASSWORD=mqseriesadmin
+      - MQ_DEV=true
+      - MQ_ADMIN_PASSWORD=passw0rd
     stdin_open: true
     tty: true
-    restart: always
+    networks:
+      - core_fast-net
+networks:
+  core_fast-net:
+    external: true

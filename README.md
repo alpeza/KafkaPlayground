@@ -1,4 +1,4 @@
-# Docker-compose tool
+# Kafka Playground
 
 ## Instalación
 
@@ -22,6 +22,8 @@ alias devenv="$DEVENV_PATH/tool/tool.sh"
 127.0.0.1       kafka
 127.0.0.1       connect
 127.0.0.1       schema-registry
+127.0.0.1       mqseries
+127.0.0.1       oracle
 ```
 
 ## Comandos
