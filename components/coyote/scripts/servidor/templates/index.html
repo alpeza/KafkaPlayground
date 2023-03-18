@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de tests</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+</head>
+<body>
+	
+		
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Test Coyote</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                  <a class="mdl-navigation__link" href="/">Home</a>
+                </nav>
+              </div>
+            </header>
+          </div>
+
+          <br><br><br>  <br>
+		
+		<main class="mdl-layout__content">
+			<div class="page-content mdl-grid">
+				<div class="mdl-cell mdl-cell--12-col">
+					<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+						<thead>
+							<tr>
+								<th class="mdl-data-table__cell--non-numeric">Nombre del Fichero</th>
+								<th>Ejecutar</th>
+								<th>Mostrar Ejecuciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for file in files %}
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">{{ file }}</td>
+								<td>
+									<form action="/run" method="post">
+										<input type="hidden" name="filename" value="{{ file }}">
+										<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-color--green" type="submit"><i class="material-icons">play_arrow</i></button>
+									</form>
+								</td>
+								<td>
+									<a href="/ejecuciones/{{ os.path.splitext(file)[0]  }}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-color--pink"><i class="material-icons">visibility</i></a>
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de tests</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    </head>
+  <body>
+    
+
+            <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Ejecuciones Coyote</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                  <a class="mdl-navigation__link" href="/">Home</a>
+                </nav>
+              </div>
+            </header>
+         
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100vw;">
+                <thead>
+                  <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Titulo</th>
+                    <th>OK</th>
+                    <th>Date</th>
+                    <th>Errors</th>
+                    <th>Successful</th>
+                    <th>TotalTests</th>
+                    <th>TotalTime</th>
+                    <th>html</th>
+                    <th>json</th>
+                    <th>borrar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for test in tests %}
+                      <tr>
+                          <td class="mdl-data-table__cell--non-numeric">{{ test["Titulo"] }}</td>
+                          <td>{% if test["OK"] %}<i class="material-icons mdl-color-text--green">check</i>{% else %}<i class="material-icons mdl-color-text--red">clear</i>{% endif %}</td>
+                          <td>{{ test["Date"] }}</td>
+                          <td>{{ test["Errors"] }}</td>
+                          <td>{{ test["Successful"] }}</td>
+                          <td>{{ test["TotalTests"] }}</td>
+                          <td>{{ test["TotalTime"] }}</td>
+                          <td><a href="{{ test['html'] }}"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">summarize</i></button></a></td>
+                          <td><a href="{{ test['json'] }}"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">code</i></button></a></td>
+                          <td>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="borrarArchivos('{{ test["Titulo"] }}')">
+                                <i class="material-icons">delete</i>
+                              </button>
+                          </td>
+                      </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+            <script>
+                function borrarArchivos(nombretest) {
+                    fetch('/borrar', {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({nombre_archivo: nombretest})
+                    })
+                    .then(response => {
+                        response.json();
+                        location.reload();
+                    })
+                    .then(data => console.log(data))
+                    .catch(error => console.error(error));
+                    }
+            </script>
+            </body>
+</html>
