@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Logs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js" integrity="sha512-I9p4eOeWXGM9m5GhJYd3UDUA5Lr+Epp5e4ykWFYW9hv3jZqdR92S5p+ApMSWuMaV4E+JqILepP1G9kNer4AFGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</head>
+<body>
+
+
+    <header class="mdl-layout__header">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Logs Coyote</span>
+                <div class="sdl-layout-spacer"  style="width: 20px;"></div>
+                <span class="mdl-layout-subtitle">     <code>   {{ log_file }}</code></span>
+                <div class="sdl-layout-spacer"  style="width: 20px;"></div>
+               
+                <a href="/ejecuciones/{{ test }}/{{ report }}">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                      Report
+                    </button>
+                </a>
+                  
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                  <a class="mdl-navigation__link" href="/">Home</a>
+                </nav>
+              </div>
+            </header>
+          </div>
+    </header>
+
+    <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+            <pre id="log-lines">
+                {{ log_lines }}
+            </pre>
+        </div>
+    </main>
+
+    <script>
+         $(document).ready(function() {
+            //var socket = io.connect('{{ url_for('logs', log_file=log_file) }}');
+            setInterval(function() {
+                location.reload();
+            }, 2000);
+
+            console.log("Se inicia ...");
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            
+            socket.on('connect', function() {
+                console.log("Conectado");
+                socket.emit('log_connect', {log_file: '{{ log_file }}' });
+            });
+
+            socket.on('log_lines', function(data) {
+                console.log("Llega dato: " + data);
+                var log_lines = data;
+                document.getElementById('log-lines').innerHTML += log_lines;
+            });
+
+
+
+            socket.on('disconnect', function() {
+                console.log("Desconectado del servidor de sockets.");
+            });
+            
+        });
+    </script>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js" integrity="sha512-I9p4eOeWXGM9m5GhJYd3UDUA5Lr+Epp5e4ykWFYW9hv3jZqdR92S5p+ApMSWuMaV4E+JqILepP1G9kNer4AFGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

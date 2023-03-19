@@ -1,0 +1,29 @@
+- name: Test 1
+  entries:
+    - name: Command 1
+      command: ls /
+      stdout:
+       - match: ["my-folder", "my-file.txt"]
+         partial: true
+
+    - name: Com
+      command: sleep 15
+    - name: Com
+      command: echo "$(date)"
+
+    - name: asdf
+      command: tee tmp.txt
+      stdin: |
+        asdffsdfasd asdfsdfasdf
+        asdfsdfasdf  sdfsdfsdfsdf
+    - name: Com
+      command: sleep 15
+    - name: Com
+      command: echo "$(date)"
+
+    - name: muestra
+      command: cat tmp.txt
+
+
+    - command: ls /proc
+      nolog: true
