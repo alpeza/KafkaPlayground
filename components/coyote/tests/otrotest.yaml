@@ -1,0 +1,13 @@
+- name: Test Dos
+  entries:
+    - name: Command 1
+      command: ls /
+
+    - name: asdf
+      command: tee tmp.txt
+      stdin: |
+        asdffsdfasd asdfsdfasdf
+        asdfsdfasdf  sdfsdfsdfsdf
+
+    - name: muestra
+      command: cat tmp.txt

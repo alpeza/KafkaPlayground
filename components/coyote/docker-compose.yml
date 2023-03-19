@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  coyote:
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      #- ./scripts:/app/scripts
+      #- ./output:/app/output
+      #- ./logs:/app/logs
+      - ./tests:/app/tests
+    ports:
+      - '6061:5002'
+    networks:
+      - core_fast-net
+
+networks:
+  core_fast-net:
+    external: true
